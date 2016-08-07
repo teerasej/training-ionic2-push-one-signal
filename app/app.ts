@@ -20,8 +20,8 @@ export class MyApp {
         console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
       };
 
-      let appId = 'b2f7f966-d8cc-11e4-bed1-df8f05be55ba';
-      let gpNumber = '703322744261';
+      let appId = '';
+      let gpNumber = '';
 
       OneSignal.init(appId, { googleProjectNumber: gpNumber, autoRegister: true }).subscribe(notificationOpenedCallback);
 
