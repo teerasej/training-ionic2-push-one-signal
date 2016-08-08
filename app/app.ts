@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
-import { OneSignal } from 'ionic-native';
+// import { OneSignal } from 'ionic-native';
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>'
@@ -18,14 +18,10 @@ export class MyApp {
 
       let appId = '';
       let gpNumber = '';
-
-      OneSignal.init(appId, { googleProjectNumber: gpNumber, autoRegister: true }).subscribe( (jsonData:any)=>{
-        let dataFromPush = JSON.stringify(jsonData)
-        console.log('didReceiveRemoteNotificationCallBack: ' + dataFromPush);
-        alert(dataFromPush);
-      });
-
-      OneSignal.enableInAppAlertNotification(true);
+      
+     
+      
+      // OneSignal.enableInAppAlertNotification(true);
     });
   }
 }
