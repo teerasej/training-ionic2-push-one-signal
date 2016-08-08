@@ -19,11 +19,8 @@ export class MyApp {
       let appId = '';
       let gpNumber = '';
 
-      OneSignal.init(appId, { googleProjectNumber: gpNumber, autoRegister: true }).subscribe( (jsonData:any)=>{
-        let dataFromPush = JSON.stringify(jsonData)
-        console.log('didReceiveRemoteNotificationCallBack: ' + dataFromPush);
-        alert(dataFromPush);
-      });
+      // subscribe( (jsonData:any)=> { JSON.stringify(jsonData) })
+      OneSignal.init(appId, { googleProjectNumber: gpNumber, autoRegister: true });
 
       OneSignal.enableInAppAlertNotification(true);
     });
