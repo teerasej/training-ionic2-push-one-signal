@@ -16,14 +16,14 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
 
-      let notificationOpenedCallback = (jsonData: any) => {
-        console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-      };
-
       let appId = '';
       let gpNumber = '';
 
-      OneSignal.init(appId, { googleProjectNumber: gpNumber, autoRegister: true }).subscribe(notificationOpenedCallback);
+      OneSignal.init(appId, { googleProjectNumber: gpNumber, autoRegister: true }).subscribe( (jsonData:any)=>{
+        let dataFromPush = JSON.stringify(jsonData)
+        console.log('didReceiveRemoteNotificationCallBack: ' + dataFromPush);
+        alert(dataFromPush);
+      });
 
       OneSignal.enableInAppAlertNotification(true);
     });
